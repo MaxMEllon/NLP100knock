@@ -17,7 +17,7 @@ describe 'Q06-2' do
     y = 'para graph'.word_ngram(2)
     @prog_06 = Prog06.new(x, y)
   end
-  it { expect(@prog_06.union).to eq ["parapara", "paraparadise", "paragraph"] }
+  it { expect(@prog_06.union).to eq %w(parapara paraparadise paragraph) }
   it { expect(@prog_06.product).to eq [] }
-  it { expect(@prog_06.diff).to eq ["parapara", "paraparadise"] }
+  it { expect(@prog_06.diff).to eq %w(parapara paraparadise) }
 end
