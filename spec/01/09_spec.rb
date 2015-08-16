@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe 'Q08' do
+describe 'Q09' do
   it { expect(prog_09.split(' ')[0]).to eq 'I' }
   it { expect(prog_09.split(' ')[1]).not_to eq 'I' }
   it { expect(prog_09.split(' ')[2]).not_to eq 'that' }
