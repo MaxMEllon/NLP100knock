@@ -7,6 +7,5 @@ def prog_16(n = 1)
   lines.each_with_index do |line, k|
     ans[k / size] << line
   end
-  puts ans
   ans
 end

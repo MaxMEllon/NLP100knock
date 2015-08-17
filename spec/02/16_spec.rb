@@ -11,6 +11,8 @@ describe 'Q16' do
     end
   end
   it { expect(@prog_16[0]).to eq @output_files[0] }
+  it { expect(@prog_16[1]).to eq @output_files[1] }
+  it { expect(@prog_16[2]).to eq @output_files[2] }
   after do
     `rm -rf #{Dir.pwd}/data/txt/out.*`
   end
