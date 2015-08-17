@@ -1,25 +1,23 @@
 class Prog13
-  def split_data
-    path = Dir.pwd + '/data/txt/'
+  def initialize
+    @path = Dir.pwd + '/data/txt/'
     ans = [[], []]
-    File.read(path + 'hightemp.txt').lines.each do |line|
+    File.read(@path + 'hightemp.txt').lines.each do |line|
       ans.each_with_index { |e, k| e.push line.split("\t")[k] }
     end
-    ans.each.with_index(1) { |e, k| File.write("#{path}/col#{k}.txt", e.map { |m| m + "\n" }.join) }
+    ans.each.with_index(1) { |e, k| File.write("#{@path}/col#{k}.txt", e.map { |m| m + "\n" }.join) }
+    @cols = [File.read(@path + 'col1.txt').lines, File.read(@path + 'col2.txt').lines]
   end
 
   def merge_data
-    path = Dir.pwd + '/data/txt/'
-    cols = [File.read(path + 'col1.txt').lines, File.read(path + 'col2.txt').lines]
     ans = []
-    (0...cols[0].length).each do |k|
-      ans.push cols[0][k].to_s.chomp + "\t" + cols[1][k].to_s.chomp + "\n"
+    (0...@cols[0].length).each do |k|
+      ans.push @cols[0][k].to_s.chomp + "\t" + @cols[1][k].to_s.chomp + "\n"
     end
     ans.join
   end
 
   def clean_file
-    path = Dir.pwd + '/data/txt/'
-    (1..2).each { |k| `rm -rf #{path}col#{k}.txt` }
+    (1..2).each { |k| `rm -rf #{@path}col#{k}.txt` }
   end
 end
