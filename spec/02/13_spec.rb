@@ -6,7 +6,6 @@ describe 'Q13' do
     path = Dir.pwd + '/data/txt/'
     @col1 = path + 'col1.txt'
     @col2 = path + 'col2.txt'
-    @ans = `paste -d '\t' #{@col1} #{@col2}`
   end
   it { expect(@prog_13.merge_data).to eq `paste -d '\t' #{@col1} #{@col2}` }
   after do
