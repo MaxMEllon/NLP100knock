@@ -5,7 +5,7 @@
 class String
   def char_ngram(n)
     ngram = []
-    str = split('').map { |e| e.gsub(' ', '') }.join
+    str = split('').map { |e| e.delete(' ') }.join
     str.split('').each_cons(n) { |e| ngram.push e.join }
     ngram
   end

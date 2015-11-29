@@ -15,7 +15,7 @@ def prog_09
       next
     end
   end
-  arr.to_s.gsub(/\"|\[|\]/, '').gsub(',', '')
+  arr.to_s.gsub(/\"|\[|\]/, '').delete(',')
 end
 
 p prog_09

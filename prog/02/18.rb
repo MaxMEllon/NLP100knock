@@ -14,4 +14,3 @@ end
 
 prog18 = Prog18.new
 puts prog18.sort
-

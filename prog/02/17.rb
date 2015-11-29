@@ -4,5 +4,5 @@ def prog_17
   line.split("\t").each do |char|
     ans << char unless ans.include?(char)
   end
-  ans.to_s.gsub(/\[|\]|"|\ /, '').gsub(',', "\t") << "\n"
+  ans.to_s.gsub(/\[|\]|"|\ /, '').tr(',', "\t") << "\n"
 end
