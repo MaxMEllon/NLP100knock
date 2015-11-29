@@ -6,9 +6,7 @@ class Prog18
   end
 
   def sort
-    arr = []
-    @lines.each { |line| arr.push line }
-    arr.sort { |a, b| b[2].to_f <=> a[2].to_f }.reverse.join
+    @lines.sort { |a, b| b[2].to_f <=> a[2].to_f }.reverse.join
   end
 end
 
