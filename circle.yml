@@ -1,7 +1,9 @@
 machine:
-    ruby:
-        version: 2.2.3
+  timezone:
+    Asia/Tokyo
+  ruby:
+    version: 2.2.3
 test:
-    override:
-        - 'bundle exec rake'
+  override:
+    - 'bundle exec rake'
 
